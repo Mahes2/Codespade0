@@ -23,10 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.DataSet1 = New System.Data.DataSet()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -37,10 +34,6 @@ Partial Class Form1
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Connect"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "NewDataSet"
         '
         'TextBox1
         '
@@ -59,14 +52,11 @@ Partial Class Form1
         Me.Controls.Add(Me.Button1)
         Me.Name = "Form1"
         Me.Text = "Form1"
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Button1 As Button
-    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
-    Friend WithEvents DataSet1 As DataSet
     Friend WithEvents TextBox1 As TextBox
 End Class
