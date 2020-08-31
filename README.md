@@ -1,7 +1,7 @@
 # Codespade0
 
 #VB.NET
-Version 1.0 (2020/08/31)
+Version 1.0.0 (2020/08/31)
 - UI: Simple form with button and textbox
 - Feature: Connect to localhost database
 - Prerequisite: 
