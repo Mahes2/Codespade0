@@ -25,3 +25,7 @@ C:\Users\maes.sawira\source\repos\WindowsApp1\WindowsApp1\bin\Debug\System.Runti
 C:\Users\maes.sawira\source\repos\WindowsApp1\WindowsApp1\bin\Debug\MySql.Data.xml
 C:\Users\maes.sawira\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.exe.config
 C:\Users\maes.sawira\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CopyComplete
+C:\Users\maes.sawira\source\repos\WindowsApp1\WindowsApp1\bin\Debug\WindowsApp1.exe.manifest
+C:\Users\maes.sawira\source\repos\WindowsApp1\WindowsApp1\bin\Debug\WindowsApp1.application
+C:\Users\maes.sawira\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.exe.manifest
+C:\Users\maes.sawira\source\repos\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.application
