@@ -29,17 +29,21 @@ Public Class Form1
         Dim da As New MySqlDataAdapter(query, connection)
         Dim dt As New DataTable
         da.Fill(dt)
-        If (dt.Rows.Count > 0) Then
-            TextBox1.Text = dt.Rows(dt.Rows.Count - 1).Item("data")
-        Else
-            TextBox1.Text = "--No Data--"
-        End If
+
+        BindingSource1.DataSource = dt
+        DataGridView1.DataSource = BindingSource1
     End Sub
 
     Private Sub PutData(query As String)
         Dim command As MySqlCommand = New MySqlCommand(query, connection)
         command.ExecuteNonQuery()
         MsgBox("[" + TextBox1.Text + "] has been inserted!", vbInformation, "CodeSpade")
+    End Sub
+
+    Private Sub DeleteData(query As String)
+        Dim command As MySqlCommand = New MySqlCommand(query, connection)
+        command.ExecuteNonQuery()
+        MsgBox("[" + TextBox1.Text + "] has been deleted!", vbInformation, "CodeSpade")
     End Sub
 
     Private Sub BtnConnect_Click(sender As Object, e As EventArgs) Handles BtnConnect.Click
@@ -50,6 +54,7 @@ Public Class Form1
                     BtnConnect.Text = "Disconnect"
                     BtnSelect.Enabled = True
                     BtnInsert.Enabled = True
+                    BtnDelete.Enabled = True
                 End If
             Case "Disconnect"
                 Disconnect()
@@ -57,6 +62,8 @@ Public Class Form1
                 TextBox1.Text = ""
                 BtnSelect.Enabled = False
                 BtnInsert.Enabled = False
+                BtnDelete.Enabled = False
+                DataGridView1.DataSource = ""
         End Select
     End Sub
 
@@ -68,9 +75,22 @@ Public Class Form1
     Private Sub BtnInsert_Click(sender As Object, e As EventArgs) Handles BtnInsert.Click
         Dim query As String = "INSERT INTO notification(data) VALUES('" + TextBox1.Text + "')"
         PutData(query)
+
+        Dim query2 As String = "SELECT * FROM notification"
+        GetData(query2)
     End Sub
 
-    Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles BtnSelect.Click
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+        DataGridView1_SelectionChanged(sender, e)
 
+        Dim query As String = "DELETE FROM notification WHERE id = '" + DataGridView1.Item(0, DataGridView1.CurrentRow.Index).Value.ToString + "'"
+        DeleteData(query)
+
+        Dim query2 As String = "SELECT * FROM notification"
+        GetData(query2)
+    End Sub
+
+    Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
+        TextBox1.Text = DataGridView1.Item(1, DataGridView1.CurrentRow.Index).Value
     End Sub
 End Class

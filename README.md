@@ -17,3 +17,11 @@ Version 1.1.0 (2020/09/01)
   1. Select from database
   2. Insert into database
   3. Disconnect from database connection
+
+Version 1.2.0 (2020/09/05)
+- UI:
+  1. Adding a button to delete
+  2. Adding DataGridView to show the table's data
+- Feature:
+  1. Delete from database
+  2. Show all data in the DataGridView
